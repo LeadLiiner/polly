@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Polly",
+  "version": "0.1.0",
+  "description": "Record and replay browser workflows with trusted events. User-consented capture only.",
+  "action": { "default_popup": "assets/popup.html" },
+  "options_page": "assets/options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "debugger",
+    "alarms",
+    "tabCapture"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["assets/recorder.js"],
+    "run_at": "document_start"
+  }]
+}

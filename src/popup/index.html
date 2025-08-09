@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Polly</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none';">
+    <style>
+      body { font: 12px/1.4 system-ui, sans-serif; margin: 12px; width: 320px; }
+      button { margin: 4px 0; }
+      .row { display: flex; gap: 6px; align-items: center; }
+      .list { max-height: 200px; overflow: auto; border: 1px solid #ddd; padding: 6px; }
+      .item { display: flex; justify-content: space-between; margin: 4px 0; }
+      input[type="text"] { width: 100%; }
+    </style>
+  </head>
+  <body>
+    <h3>Polly</h3>
+    <div class="row">
+      <button id="start">Start recording</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div class="row">
+      <input id="name" type="text" placeholder="Workflow name" />
+      <button id="save">Save workflow</button>
+    </div>
+    <h4>Workflows</h4>
+    <div class="list" id="list"></div>
+    <script type="module" src="/src/popup/main.ts"></script>
+  </body>
+</html>
